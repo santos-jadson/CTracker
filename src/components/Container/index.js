@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 const Container = styled.div`
 max-width: 900px;
-background: #fff;
+background: #f9f9f9;
 border: 2px solid #eee;
 border-radius: 4px;
 margin: 50px auto;
@@ -14,7 +14,7 @@ box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
         margin-top: 30px;
     
         h1 {
-        font-size: 40px;
+        font-size: 50px;
         color: #000;
         }
 

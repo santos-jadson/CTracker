@@ -7,6 +7,8 @@ import './App.css'
 import Container from './components/Container'
 import CardContainer from './components/Cards'
 
+import Chart from './components/Charts'
+
 function App() {
   return (
     <Container>
@@ -15,6 +17,7 @@ function App() {
         <h1>Corona Tracker</h1>
       </header>
       <CardContainer />
+      <Chart/>
     </Container>
   )
 }
