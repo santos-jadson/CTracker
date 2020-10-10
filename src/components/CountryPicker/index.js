@@ -1,9 +1,11 @@
 import React from 'react'
 
-const CountryPicker = ({ data }) => {
+import './styles.css'
+
+const CountryPicker = ({ data, onSelect }) => {
     return (
         <form>
-            <select name="country">
+            <select onChange={onSelect} name="country">
                 <option value="global">Global</option>
                 {data.map( country => (
                     <option key={country} value={country}>{country}</option>

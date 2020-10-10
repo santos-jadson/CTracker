@@ -1,6 +1,5 @@
 import React from 'react';
-
-import virus from './assets/images/virus-solid.svg'
+import virus from './assets/images/covid.svg'
 
 import './App.css'
 
@@ -20,14 +19,27 @@ class App extends Component {
       data: {},
       countries: [],
       loading: true,
+      selected: ''
     }
   }
-  
+/*  
+    const [countries, setCountries] = useState([])
+    const [data, setData] = useState({})
+    const [selected, setSelected] = useState('')
 
+    useEffect(() => {
+      [setCountries, setData] = await Promisse.all([
+        fetchCountries(),
+        fetchData(selected)
+      ])
+
+      setCountries(countries.map( country => country.name ))
+    }, selected)
+*/
   async componentDidMount() {
     const [{data: {countries}}, {data}] = await Promise.all([
       fetchCountries(),
-      fetchData(),
+      fetchData(this.state.selected)
     ])
 
     const countriesList = countries.map( country => country.name )
@@ -38,6 +50,13 @@ class App extends Component {
       loading:false
     })
   }
+
+  handleChange = async (e) => {
+    const dt = await fetchData(e.target.value)
+
+    this.setState({data: dt.data})
+  }
+
 
 render() {
     const { loading } = this.state
@@ -55,8 +74,8 @@ render() {
           <h1>Corona Tracker</h1>
         </header>
         <CardContainer data={data}/>
-        <CountryPicker data={countries}/>
-        <Chart/>
+        <CountryPicker onSelect={this.handleChange} data={countries}/>
+        <Chart data={data}/>
       </Container>
     )
   }

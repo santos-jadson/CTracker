@@ -5,20 +5,27 @@ import Card from './Card'
 import './styles.css'
 
 const CardContainer = ({data: {confirmed, recovered, deaths}}) => {
+
     return (
         <section>
-            <Card>
-                <span>Infected</span>
+            <Card reference={'infected'}>
+                <div>
+                    <span>Infected</span>
+                </div>
                 <strong>{confirmed.value}</strong>
                 <h3>01/01/2020</h3>
             </Card>
-            <Card>
-                <span>Recovered</span>
+            <Card reference={'recovered'}>
+                <div>
+                    <span>Recovered</span>
+                </div>
                 <strong>{recovered.value}</strong>
                 <h3>01/01/2020</h3>
             </Card>
-            <Card>
-                <span>Deaths</span>
+            <Card reference={'deaths'}>
+                <div>
+                    <span>Deaths</span>
+                </div>
                 <strong>{deaths.value}</strong>
                 <h3>01/01/2020</h3>
             </Card>

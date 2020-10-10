@@ -6,8 +6,9 @@
     outline:0;
     box-sizing: border-box;
     font-family: Roboto, Arial, Helvetica, sans-serif;
+    -webkit-font-smoothing: antialiased !important;
 }
 
 body {
-    background: #8A87EA;
+    background: #E8F4FD;
 }
