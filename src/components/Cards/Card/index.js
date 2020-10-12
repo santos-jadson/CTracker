@@ -1,10 +1,12 @@
 import styled from 'styled-components'
 
 const Card = styled.div`
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap');
 width: 180px;
 height: 180px;
 
+
+font-family: 'Roboto Slab', serif;
 display: flex;
 flex-direction: column;
 align-items: center;
@@ -25,7 +27,7 @@ box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
     }
 
     span {
-        font-size: 15px;
+        font-size: 16px;
         margin: 20px auto;
     }
 
@@ -35,8 +37,8 @@ box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
     }
 
     h3 {
-        font-size: 15px;
-        color: #191920;
+        font-size: 12px;
+        color: #918f8f;
     }
 
 `

@@ -19,27 +19,13 @@ class App extends Component {
       data: {},
       countries: [],
       loading: true,
-      selected: ''
     }
   }
-/*  
-    const [countries, setCountries] = useState([])
-    const [data, setData] = useState({})
-    const [selected, setSelected] = useState('')
 
-    useEffect(() => {
-      [setCountries, setData] = await Promisse.all([
-        fetchCountries(),
-        fetchData(selected)
-      ])
-
-      setCountries(countries.map( country => country.name ))
-    }, selected)
-*/
   async componentDidMount() {
     const [{data: {countries}}, {data}] = await Promise.all([
       fetchCountries(),
-      fetchData(this.state.selected)
+      fetchData()
     ])
 
     const countriesList = countries.map( country => country.name )
